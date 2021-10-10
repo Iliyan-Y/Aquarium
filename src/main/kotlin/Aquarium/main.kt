@@ -2,6 +2,7 @@ package Aquarium
 
 fun main (args: Array<String>) {
     buildAquarium()
+    makeFish()
 }
 
 //accessible only in this file
@@ -21,4 +22,19 @@ private fun buildAquarium() {
     val fixExample = Fish(false, 30)
     // if class initialize method exist need to call by variable the volume needed
     println("Example fish volume needed: ${fixExample.size} ")
+}
+fun makeFish() {
+    val shark = Shark()
+    val tostolop = Tostolop()
+
+    println("Shark has ${shark.color} color and the tostolop has ${tostolop.color} color")
+//    shark.eat()
+//    tostolop.eat()
+
+    feedFish(shark)
+    feedFish(tostolop)
+}
+
+fun feedFish(fish: FishAction) {
+    fish.eat()
 }
